@@ -1,0 +1,12 @@
+-- ds.page:
+full-width: true
+
+-- ds.cta-13: Strategy and Consultancy.
+cta-url: cta-url
+cta-txt: Button
+image : $assets.files.assets.placeholder.svg
+
+A design approach is a general philosophy that may or may not include a 
+guide for specific methods.
+
+-- end: ds.page

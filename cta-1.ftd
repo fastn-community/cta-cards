@@ -1,0 +1,14 @@
+-- ds.page:
+full-width: true
+
+-- ds.cta-1:
+help-info: Text Here
+cta-url: cta-url
+cta-txt: Button
+image : $assets.files.assets.placeholder.svg
+
+We transform ideas into digital outcomes to elevate the connection between 
+the brand and their users.
+
+
+-- end: ds.page

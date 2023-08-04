@@ -1,0 +1,75 @@
+-- site-doc.doc-home:
+current-package: priyanka9634.github.io/CTA
+show-tabs: false
+site-title: CTA 1
+github-url: https://github.com/priyanka9634/CTA
+
+-- ds.cta-3: We transform ideas into digital outcomes to elevate the connection.
+help-info: Label Here
+cta-url: cta-url
+cta-txt: Button
+
+A design approach is a general philosophy that may or may not include a guide 
+for specific methods.
+
+
+
+
+-- site-doc.header: How to use
+
+-- cb.code: Add `cta` dependency into your FASTN.ftd
+lang: ftd
+
+\-- fastn.dependency: priyanka9634.github.io/cta
+
+-- cb.code: import `cta` inside your `.ftd` file
+lang: ftd
+
+\-- import: priyanka9634.github.io/cta
+
+\-- cta.cta-3: We transform ideas into digital outcomes to elevate the connection.
+help-info: Label Here
+cta-url: cta-url
+cta-txt: Button
+
+A design approach is a general philosophy that may or may not include a guide 
+for specific methods.
+
+
+-- site-doc.header: Properties:
+
+Below are details of all properties of `cta-12` component.
+
+-- site-doc.component-property: `title`
+type: Caption (`required`)
+
+It's used to add info content to `cta-12` component.
+
+-- site-doc.component-property: `help-info`
+type: String (`required`)
+
+It's used to add info content to `cta-12` component. 
+
+-- site-doc.component-property: `body`
+type: Body (`required`)
+
+It's used to add body content to `cta-12` component. 
+
+-- site-doc.component-property: `cta-txt`
+type: String (`required`)
+
+It's used to add cta-txt content to `cta-12` component.
+ 
+
+-- site-doc.component-property: `cta-url`
+type: String (`required`)
+
+It's used to add cta-url to cta-txt in  `cta-12` component.
+
+
+-- site-doc.component-property: `image`
+type: Image (`required`)
+
+It's used to add image content to   `cta-12` component.
+
+-- end: site-doc.doc-home

@@ -5,6 +5,9 @@
 -- import: fastn-community.github.io/doc-site/
 export: markdown,h0,h1,h2,h3,code,rendered,output,image,iframe,youtube,compact-text,post,posts,featured-post,image-first,image-in-between,without-image,author-bio,tip,not-found-1,not-found-2,link,link-group
 
+-- import: priyanka9634.github.io/CTA
+export: cta-1,cta-2,cta-3,cta-4,cta-5,cta-6,cta-7,cta-8,cta-9,cta-10,cta-11,cta-12,cta-13,cta-14
+
 -- common.site-logo site-logo: $assets.files.assets.ipsum-logo.svg
 
 -- component page:
@@ -35,7 +38,7 @@ string site-url: $common.site-url
 -- ftd.ui list page.footer:
 
 -- footer.fastn-footer:
-copyright: Copyright © 2023 - <user_name>.github.io/<repo_name>
+copyright: Copyright © 2023 - priyanka9634.github.io/CTA
 site-logo: $common.fastn-logo
 powered-by-text: Powered by
 powered-by-link: https://fastn.com/

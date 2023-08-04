@@ -1,0 +1,15 @@
+-- ds.page:
+full-width: true
+
+-- ds.cta-10: 
+cta-primary-url: cta-url
+cta-primary-txt: Button
+cta-secondary-url: cta-url
+cta-secondary-txt: Button
+
+We transform ideas into digital outcomes to elevate the connection between 
+the brand and their users.
+
+
+
+-- end: ds.page

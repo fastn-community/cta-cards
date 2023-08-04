@@ -38,7 +38,7 @@ string site-url: $common.site-url
 -- ftd.ui list page.footer:
 
 -- footer.fastn-footer:
-copyright: Copyright © 2023 - priyanka9634.github.io/cta-1
+copyright: Copyright © 2023 - priyanka9634.github.io/CTA
 site-logo: $common.fastn-logo
 powered-by-text: Powered by
 powered-by-link: https://fastn.com/

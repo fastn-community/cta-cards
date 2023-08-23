@@ -1,10 +1,10 @@
 -- ds.page:
 full-width: true
 
--- ds.cta-3: We transform ideas into digital outcomes to elevate the connection.
-help-info: Label Here
-cta-url: cta-url
-cta-txt: Button
+-- ds.cta-full-width: We transform ideas into digital outcomes to elevate the connection.
+tag: Label Here
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 
 A design approach is a general philosophy that may or may not include a guide 
 for specific methods.

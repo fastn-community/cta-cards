@@ -1,9 +1,9 @@
 -- ds.page:
 full-width: true
 
--- ds.cta-9: SWe transform ideas into digital outcomes to elevate the connection.
-cta-url: cta-url
-cta-txt: Button
+-- ds.cta-left-hug: SWe transform ideas into digital outcomes to elevate the connection.
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 image : $assets.files.assets.placeholder.svg
 
 A design approach is a general philosophy that may or may not include a guide 

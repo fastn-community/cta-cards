@@ -4,10 +4,10 @@ show-tabs: false
 site-title: CTA 1
 github-url: https://github.com/priyanka9634/CTA
 
--- ds.cta-4:
-help-info: Text Here
-cta-url: cta-url
-cta-txt: Button
+-- ds.cta-centerd:
+tag: Text Here
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 
 We transform ideas into digital outcomes to elevate the connection between 
 the brand and their users.
@@ -27,38 +27,38 @@ lang: ftd
 
 \-- import: priyanka9634.github.io/cta
 
-\-- cta.cta-4:
-help-info: Text Here
-cta-url: cta-url
-cta-txt: Button
+\-- cta.cta-centerd:
+tag: Text Here
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 
 We transform ideas into digital outcomes to elevate the connection between 
 the brand and their users.
 
 -- site-doc.header: Properties:
 
-Below are details of all properties of `cta-4` component.
+Below are details of all properties of `cta-centerd` component.
 
--- site-doc.component-property: `help-info`
+-- site-doc.component-property: `tag`
 type: String (`required`)
 
-It's used to add info content to `cta-4` component. 
+It's used to add info content to `cta-centerd` component. 
 
 -- site-doc.component-property: `body`
 type: Body (`required`)
 
-It's used to add body content to `cta-4` component. 
+It's used to add body content to `cta-centerd` component. 
 
--- site-doc.component-property: `cta-txt`
+-- site-doc.component-property: `primary-cta-text`
 type: String (`required`)
 
-It's used to add cta-txt content to `cta-4` component.
+It's used to add primary-cta-text content to `cta-centerd` component.
  
 
--- site-doc.component-property: `cta-url`
+-- site-doc.component-property: `primary-cta-text`
 type: String (`required`)
 
-It's used to add cta-url to cta-txt in  `cta-4` component.
+It's used to add primary-cta-text to primary-cta-text in  `cta-centerd` component.
 
 
 -- end: site-doc.doc-home

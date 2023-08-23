@@ -4,10 +4,10 @@ show-tabs: false
 site-title: CTA 1
 github-url: https://github.com/priyanka9634/CTA
 
--- ds.cta-10: 
-cta-primary-url: cta-url
+-- ds.cta-left-secondary-hug: 
+cta-primary-url: primary-cta-text
 cta-primary-txt: Button
-cta-secondary-url: cta-url
+cta-secondary-url: primary-cta-text
 cta-secondary-txt: Button
 
 We transform ideas into digital outcomes to elevate the connection between 
@@ -16,20 +16,20 @@ the brand and their users.
 
 -- site-doc.header: How to use
 
--- cb.code: Add `cta-1` dependency into your FASTN.ftd
+-- cb.code: Add `cta-right-hug` dependency into your FASTN.ftd
 lang: ftd
 
 \-- fastn.dependency: priyanka9634.github.io/cta
 
--- cb.code: import `cta-10` inside your `.ftd` file
+-- cb.code: import `cta-left-secondary-hug` inside your `.ftd` file
 lang: ftd
 
-\-- import: priyanka9634.github.io/cta-10
+\-- import: priyanka9634.github.io/cta-left-secondary-hug
 
-\-- cta-1.cta-10: 
-cta-primary-url: cta-url
+\-- cta-right-hug.cta-left-secondary-hug: 
+cta-primary-url: primary-cta-text
 cta-primary-txt: Button
-cta-secondary-url: cta-url
+cta-secondary-url: primary-cta-text
 cta-secondary-txt: Button
 
 We transform ideas into digital outcomes to elevate the connection between 
@@ -37,37 +37,37 @@ the brand and their users.
 
 -- site-doc.header: Properties:
 
-Below are details of all properties of `cta-10` component.
+Below are details of all properties of `cta-left-secondary-hug` component.
 
 
 -- site-doc.component-property: `body`
 type: Body (`required`)
 
-It's used to add body content to `cta-10` component. 
+It's used to add body content to `cta-left-secondary-hug` component. 
 
 -- site-doc.component-property: `cta-primary-txt`
 
 type: String (`required`)
 
-It's used to add cta-primary-txt content to `cta-10` component.
+It's used to add cta-primary-txt content to `cta-left-secondary-hug` component.
  
 
 -- site-doc.component-property: `cta-primary-url`
 type: String (`required`)
 
-It's used to add cta-primary-url to cta-primary-txt in  `cta-10` component.
+It's used to add cta-primary-url to cta-primary-txt in  `cta-left-secondary-hug` component.
 
 
 -- site-doc.component-property: `cta-secondary-txt`
 
 type: String (`required`)
 
-It's used to add cta-secondary-txt content to `cta-10` component.
+It's used to add cta-secondary-txt content to `cta-left-secondary-hug` component.
  
 
 -- site-doc.component-property: `cta-secondary-url`
 type: String (`required`)
 
-It's used to add cta-secondary-url to cta-secondary-txt in  `cta-10` component.
+It's used to add cta-secondary-url to cta-secondary-txt in  `cta-left-secondary-hug` component.
 
 -- end: site-doc.doc-home

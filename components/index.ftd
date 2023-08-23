@@ -12,19 +12,19 @@ github-url: https://github.com/priyanka9634/CTA
 -- site-doc.output:
 colors: $ftd.default-colors
 
--- ds.cta-1:
-help-info: Text Here
-cta-url: cta-url
-cta-txt: Button
+-- ds.cta-right-hug:
+tag: Text Here
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 image : $assets.files.assets.placeholder.svg
 
 We transform ideas into digital outcomes to elevate the connection between 
 the brand and their users.
 
 
--- site-doc.header: What is a cta-1 component ?
+-- site-doc.header: What is a cta-right-hug component ?
 
-cta-1  components refer to a component where you can add all types of featured that you provide.
+cta-right-hug  components refer to a component where you can add all types of featured that you provide.
 
 -- site-doc.header: How to use feature-1 ?
 

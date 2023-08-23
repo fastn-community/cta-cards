@@ -1,10 +1,10 @@
 -- ds.page:
 full-width: true
 
--- ds.cta-12: Strategy and Consultancy.
-help-info: KICKER
-cta-url: cta-url
-cta-txt: Button
+-- ds.cta-full-width-secondary-hug: Strategy and Consultancy.
+tag: KICKER
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 image : $assets.files.assets.placeholder.svg
 
 A design approach is a general philosophy that may or may not include a g

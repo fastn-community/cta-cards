@@ -4,9 +4,9 @@ show-tabs: false
 site-title: CTA 1
 github-url: https://github.com/priyanka9634/CTA
 
--- ds.cta-13: Strategy and Consultancy.
-cta-url: cta-url
-cta-txt: Button
+-- ds.cta-right-hug3: Strategy and Consultancy.
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 image : $assets.files.assets.placeholder.svg
 
 A design approach is a general philosophy that may or may not include a 
@@ -26,9 +26,9 @@ lang: ftd
 
 \-- import: priyanka9634.github.io/cta
 
-\-- cta.cta-13: Strategy and Consultancy.
-cta-url: cta-url
-cta-txt: Button
+\-- cta.cta-right-hug3: Strategy and Consultancy.
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 image : $assets.files.assets.placeholder.svg
 
 A design approach is a general philosophy that may or may not include a 
@@ -36,33 +36,33 @@ guide for specific methods.
 
 -- site-doc.header: Properties:
 
-Below are details of all properties of `cta-13` component.
+Below are details of all properties of `cta-right-hug3` component.
 
 -- site-doc.component-property: `title`
 type: Caption (`required`)
 
-It's used to add title content to `cta-13` component.
+It's used to add title content to `cta-right-hug3` component.
  
 -- site-doc.component-property: `body`
 type: Body (`required`)
 
-It's used to add body content to `cta-13` component. 
+It's used to add body content to `cta-right-hug3` component. 
 
--- site-doc.component-property: `cta-txt`
+-- site-doc.component-property: `primary-cta-text`
 type: String (`required`)
 
-It's used to add cta-txt content to `cta-13` component.
+It's used to add primary-cta-text content to `cta-right-hug3` component.
  
 
--- site-doc.component-property: `cta-url`
+-- site-doc.component-property: `primary-cta-text`
 type: String (`required`)
 
-It's used to add cta-url to cta-txt in  `cta-13` component.
+It's used to add primary-cta-text to primary-cta-text in  `cta-right-hug3` component.
 
 
 -- site-doc.component-property: `image`
 type: Image (`required`)
 
-It's used to add image content to   `cta-13` component.
+It's used to add image content to   `cta-right-hug3` component.
 
 -- end: site-doc.doc-home

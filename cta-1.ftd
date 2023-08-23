@@ -1,10 +1,10 @@
 -- ds.page:
 full-width: true
 
--- ds.cta-1:
-help-info: Text Here
-cta-url: cta-url
-cta-txt: Button
+-- ds.cta-right-hug:
+tag: Text Here
+primary-cta-text: primary-cta-text
+primary-cta-text: Button
 image : $assets.files.assets.placeholder.svg
 
 We transform ideas into digital outcomes to elevate the connection between 

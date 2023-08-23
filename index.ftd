@@ -7,20 +7,20 @@ github-url: https://github.com/priyanka9634/CTA
 -- site-doc.output:
 colors: $ftd.default-colors
 
--- ds.cta-1:
-help-info: Text Here
-cta-url: cta-url
-cta-txt: Button
+-- ds.cta-right-hug:
+tag: Text Here
+primary-cta-link: primary-cta-link
+primary-cta-text: Button
 image : $assets.files.assets.placeholder.svg
 
 We transform ideas into digital outcomes to elevate the connection between 
 the brand and their users.
 
--- site-doc.header: What is a cta-1 component ?
+-- site-doc.header: What is a cta-right-hug component ?
 
-cta-1 components refer to a component where you can add all types of featured that you provide.
+cta-right-hug components refer to a component where you can add all types of featured that you provide.
 
--- site-doc.header: How to use cta-1 ?
+-- site-doc.header: How to use cta-right-hug ?
 
 To use feature-1 components on your [fastn](https://fastn.com/) web project, add below into `FASTN.ftd`
 file:
@@ -43,12 +43,13 @@ lang: ftd
 
 
 
--- component cta-1:
-body body:
-string cta-url:
-string cta-txt:
-string help-info:
-ftd.image-src image:
+-- component cta-right-hug:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional ftd.image-src image:
 
 -- ftd.row:
 width: fill-container
@@ -61,7 +62,8 @@ spacing.fixed.px: 120
 width: fill-container
 align-self: center
 
--- ftd.text: $cta-1.help-info
+-- ftd.text: $cta-right-hug.tag
+if: {cta-right-hug.tag != NULL }
 background.solid: $light-green
 color: $inherited.colors.cta-primary.base
 border-radius.px: 30
@@ -69,27 +71,39 @@ padding-vertical.px: 5
 role: $inherited.types.link
 padding-horizontal.px: 11
 
--- ftd.text: 
+-- ftd.text: $cta-right-hug.title
+if: { cta-right-hug.title != NULL }
 role: $inherited.types.copy-large
 style: bold
 margin-top.px: 24
 margin-bottom.px: 8
 color: $inherited.colors.text-strong
 
-$cta-1.body
+$cta-right-hug.body
 
--- button: $cta-1.cta-txt
-link: $cta-1.cta-url
+-- ftd.text: 
+if: { cta-right-hug.body != NULL }
+role: $inherited.types.copy-regular
+margin-top.px: 24
+margin-bottom.px: 8
+color: $inherited.colors.text-strong
+
+$cta-right-hug.body
+
+-- button: $cta-right-hug.primary-cta-text
+if: { cta-right-hug.primary-cta-text != NULL }
+link: $cta-right-hug.primary-cta-link
 
 -- end: ftd.column
 
 -- ftd.image:
-src: $cta-1.image
+if: { cta-right-hug.image != NULL }
+src: $cta-right-hug.image
 width: fill-container
 
 -- end: ftd.row
 
--- end: cta-1
+-- end: cta-right-hug
 
 
 
@@ -100,13 +114,13 @@ width: fill-container
 
 
 
--- component cta-2:
+-- component cta-left-hug:
 optional caption title:
-body body:
-string cta-url:
-string cta-txt:
-string help-info:
-ftd.image-src image:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional ftd.image-src image:
 
 -- ftd.row:
 width: fill-container
@@ -116,38 +130,49 @@ max-width.fixed.px: 1110
 spacing.fixed.px: 120
 
 -- ftd.image:
-src: $cta-2.image
+if: { cta-left-hug.image != NULL }
+src: $cta-left-hug.image
 width: fill-container
 
 -- ftd.column:
 width: fill-container
 align-self: center
 
--- ftd.text: $cta-2.help-info
+-- ftd.text: $cta-left-hug.tag
+if: { cta-left-hug.tag != NULL }
 background.solid: $light-green
 color: $inherited.colors.cta-primary.base
 border-radius.px: 30
 padding-vertical.px: 5
 padding-horizontal.px: 11
 
--- ftd.text: 
+-- ftd.text: $cta-left-hug.title
+if: { cta-left-hug.title != NULL }
 role: $inherited.types.copy-large
 style: bold
 margin-top.px: 24
 margin-bottom.px: 8
 color: $inherited.colors.text-strong
 
-$cta-2.body
+-- ftd.text: 
+if: { cta-left-hug.body != NULL }
+role: $inherited.types.copy-regular
+margin-top.px: 24
+margin-bottom.px: 8
+color: $inherited.colors.text-strong
 
--- button: $cta-2.cta-txt
-link: $cta-2.cta-url
+$cta-left-hug.body
+
+-- button: $cta-left-hug.primary-cta-text
+if: { cta-left-hug.primary-cta-text != NULL}
+link: $cta-left-hug.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- end: ftd.row
 
--- end: cta-2
+-- end: cta-left-hug
 
 
 
@@ -158,18 +183,23 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
--- component cta-3:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
-string help-info:
+-- component cta-full-width:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional ftd.image-src image:
 
--- ftd.row:
+-- ftd.column:
 width: fill-container
 align-self: center
 margin.px: 80
 max-width.fixed.px: 1110
+spacing.fixed.px: 40
+
+-- ftd.row:
+width: fill-container
 spacing.fixed.px: 120
 
 -- ftd.column:
@@ -178,17 +208,20 @@ align-self: center
 color: $inherited.colors.text
 spacing.fixed.px: 16
 
--- ftd.text: $cta-3.help-info
+-- ftd.text: $cta-full-width.tag
+if: { cta-full-width.tag != NULL }
 role: $inherited.types.link
 
--- ftd.text: $cta-3.title
+-- ftd.text: $cta-full-width.title
+if: { cta-full-width.title != NULL }
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 
 -- ftd.text: 
+if: { cta-full-width.body != NULL }
 role: $inherited.types.copy-regular
 
-$cta-3.body
+$cta-full-width.body
 
 -- end: ftd.column
 
@@ -197,15 +230,23 @@ width.fixed.percent: 35
 align-content: right
 align-self: center
 
--- button: $cta-3.cta-txt
-link: $cta-3.cta-url
+-- button: $cta-full-width.primary-cta-text
+if: { cta-full-width.primary-cta-text != NULL }
+link: $cta-full-width.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- end: ftd.row
 
--- end: cta-3
+-- ftd.image:
+if: { cta-full-width.image != NULL }
+src: $cta-full-width.image
+width: fill-container
+
+-- end: ftd.column
+
+-- end: cta-full-width
 
 
 
@@ -216,11 +257,13 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
--- component cta-4:
-body body:
-string cta-url:
-string cta-txt:
-string help-info:
+-- component cta-centerd:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional ftd.image-src image:
 
 -- ftd.column:
 width: fill-container
@@ -229,7 +272,8 @@ align-self: center
 margin.px: 80
 max-width.fixed.px: 730
 
--- ftd.text: $cta-4.help-info
+-- ftd.text: $cta-centerd.tag
+if: { cta-centerd.tag  != NULL }
 background.solid: $light-green
 color: $inherited.colors.cta-primary.base
 border-radius.px: 30
@@ -237,7 +281,8 @@ padding-vertical.px: 5
 padding-horizontal.px: 11
 role: $inherited.types.link
 
--- ftd.text: 
+-- ftd.text: $cta-centerd.title
+if: { cta-centerd.title != NULL }
 role: $inherited.types.copy-large
 color: $inherited.colors.text-strong
 margin-top.px: 24
@@ -245,15 +290,30 @@ margin-bottom.px: 8
 width: fill-container
 text-align: center
 
-$cta-4.body
+-- ftd.text: 
+if: { cta-centerd.body != NULL }
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+margin-top.px: 24
+margin-bottom.px: 8
+width: fill-container
+text-align: center
 
--- button: $cta-4.cta-txt
-link: $cta-4.cta-url
+$cta-centerd.body
+
+-- button: $cta-centerd.primary-cta-text
+if: { cta-centerd.primary-cta-text != NULL}
+link: $cta-centerd.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
+
+-- ftd.image:
+if: { cta-centerd.image != NULL }
+src: $cta-centerd.image
+width: fill-container
 
 -- end: ftd.column
 
--- end: cta-4
+-- end: cta-centerd
 
 
 
@@ -263,12 +323,15 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
--- component cta-5:
-body body:
-string cta-url:
-string cta-txt:
-string help-info:
-string input-placeholder:
+-- component cta-search-centerd:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional string input-placeholder:
+optional string error-messgage:
+optional ftd.image-src image:
 
 -- ftd.column:
 width: fill-container
@@ -277,7 +340,8 @@ align-self: center
 margin.px: 80
 max-width.fixed.px: 730
 
--- ftd.text: $cta-5.help-info
+-- ftd.text: $cta-search-centerd.tag
+if: { cta-search-centerd.tag != NULL }
 background.solid: $light-green
 color: $inherited.colors.cta-primary.base
 border-radius.px: 30
@@ -285,14 +349,23 @@ padding-vertical.px: 5
 padding-horizontal.px: 11
 role: $inherited.types.link
 
--- ftd.text: 
+-- ftd.text: $cta-search-centerd.title
+if: { cta-search-centerd.title != NULL }
 role: $inherited.types.copy-large
 margin-top.px: 24
 color: $inherited.colors.text-strong
 width: fill-container
 text-align: center
 
-$cta-5.body
+-- ftd.text: 
+if: { cta-search-centerd.body != NULL }
+role: $inherited.types.copy-regular
+margin-top.px: 24
+color: $inherited.colors.text-strong
+width: fill-container
+text-align: center
+
+$cta-search-centerd.body
 
 -- ftd.row:
 width: fill-container
@@ -300,17 +373,24 @@ spacing.fixed.px: 8
 margin-top.px: 8
 align-content: center
 
--- search-bar: $cta-5.input-placeholder
+-- search-bar: $cta-search-centerd.input-placeholder
+if: { cta-search-centerd.input-placeholder != NULL }
 
--- button: $cta-5.cta-txt
-link: $cta-5.cta-url
+-- button: $cta-search-centerd.primary-cta-text
+if: { cta-search-centerd.primary-cta-text != NULL }
+link: $cta-search-centerd.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.row
 
+-- ftd.image:
+if: { cta-search-centerd.image != NULL }
+src: $cta-search-centerd.image
+width: fill-container
+
 -- end: ftd.column
 
--- end: cta-5
+-- end: cta-search-centerd
 
 
 
@@ -320,13 +400,13 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
-
--- component cta-6:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
-string help-info:
+-- component cta-centered:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional ftd.image-src image:
 
 -- ftd.column:
 width: fill-container
@@ -335,10 +415,12 @@ align-content: center
 color: $inherited.colors.text
 max-width.fixed.px: 730
 
--- ftd.text: $cta-6.help-info
+-- ftd.text: $cta-centered.tag
+if: { cta-centered.tag != NULL }
 role: $inherited.types.link
 
--- ftd.text: $cta-6.title
+-- ftd.text: $cta-centered.title
+if: { cta-centered.title != NULL }
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 margin-top.px: 16
@@ -346,21 +428,28 @@ text-align: center
 width: fill-container
 
 -- ftd.text: 
+if: { cta-centered.body != NULL }
 role: $inherited.types.copy-regular
 margin-top.px: 16
 margin-bottom.px: 8
 width: fill-container
 text-align: center
 
-$cta-6.body
+$cta-centered.body
 
--- button: $cta-6.cta-txt
-link: $cta-6.cta-url
+-- button: $cta-centered.primary-cta-text
+if: { cta-centered.primary-cta-text != NULL }
+link: $cta-centered.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
+
+-- ftd.image:
+if: { cta-centered.image != NULL }
+src: $cta-centered.image
+width: fill-container
 
 -- end: ftd.column
 
--- end: cta-6
+-- end: cta-centered
 
 
 
@@ -371,17 +460,22 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
--- component cta-7:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
 
--- ftd.row:
+-- component cta-bottom-hug:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional ftd.image-src image:
+
+-- ftd.column:
 width: fill-container
 align-self: center
 margin.px: 80
 max-width.fixed.px: 1110
+
+-- ftd.row:
 spacing.fixed.px: 120
 background.solid: $inherited.colors.background.step-1
 padding-vertical.px: 64
@@ -394,14 +488,20 @@ align-self: center
 color: $inherited.colors.text
 spacing.fixed.px: 16
 
--- ftd.text: $cta-7.title
+-- ftd.text: $cta-bottom-hug.tag
+if: { cta-bottom-hug.tag != NULL }
+role: $inherited.types.link
+
+-- ftd.text: $cta-bottom-hug.title
+if: { cta-bottom-hug.title != NULL }
 role: $inherited.types.heading-medium
 color: $inherited.colors.text
 
 -- ftd.text: 
+if: { cta-bottom-hug.body != NULL }
 role: $inherited.types.copy-regular
 
-$cta-7.body
+$cta-bottom-hug.body
 
 -- end: ftd.column
 
@@ -410,15 +510,23 @@ width.fixed.percent: 35
 align-content: right
 align-self: center
 
--- button: $cta-7.cta-txt
-link: $cta-7.cta-url
+-- button: $cta-bottom-hug.primary-cta-text
+if:{ cta-bottom-hug.primary-cta-text != NULL }
+link: $cta-bottom-hug.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- end: ftd.row
 
--- end: cta-7
+-- ftd.image:
+if:{ cta-bottom-hug.image != NULL }
+src: $cta-bottom-hug.image 
+width: fill-container
+
+-- end: ftd.column
+
+-- end: cta-bottom-hug
 
 
 
@@ -428,13 +536,13 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
-
--- component cta-8:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
-ftd.image-src image:
+-- component cta-tertiary-right-hug:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional ftd.image-src image:
+optional string tag:
 
 -- ftd.row:
 width: fill-container
@@ -448,30 +556,38 @@ width: fill-container
 align-self: center
 color: $inherited.colors.text
 
--- ftd.text: $cta-8.title
+-- ftd.text: $cta-tertiary-right-hug.tag
+if: { cta-tertiary-right-hug.tag != NULL }
+role: $inherited.types.link
+
+-- ftd.text: $cta-tertiary-right-hug.title
+if: { cta-tertiary-right-hug.title != NULL }
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 margin-top.px: 8
 
 -- ftd.text: 
+if: { cta-tertiary-right-hug.body != NULL }
 role: $inherited.types.copy-regular
 margin-top.px: 8
 
-$cta-8.body
+$cta-tertiary-right-hug.body
 
--- button: $cta-8.cta-txt
-link: $cta-8.cta-url
+-- button: $cta-tertiary-right-hug.primary-cta-text
+if: { cta-tertiary-right-hug.primary-cta-text != NULL }
+link: $cta-tertiary-right-hug.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- ftd.image:
-src: $cta-8.image
+if: { cta-tertiary-right-hug.image != NULL }
+src: $cta-tertiary-right-hug.image
 width: fill-container
 
 -- end: ftd.row
 
--- end: cta-8
+-- end: cta-tertiary-right-hug
 
 
 
@@ -482,12 +598,13 @@ width: fill-container
 
 
 
--- component cta-9:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
-ftd.image-src image:
+-- component cta-left-hug:
+optional caption title:
+optional body body:
+optional string tag:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional ftd.image-src image:
 
 -- ftd.row:
 width: fill-container
@@ -497,7 +614,8 @@ max-width.fixed.px: 1110
 spacing.fixed.px: 120
 
 -- ftd.image:
-src: $cta-9.image
+if: { cta-left-hug.image != NULL }
+src: $cta-left-hug.image
 width: fill-container
 
 -- ftd.column:
@@ -505,26 +623,33 @@ width: fill-container
 align-self: center
 color: $inherited.colors.text
 
--- ftd.text: $cta-9.title
+-- ftd.text: $cta-left-hug.tag
+if: { cta-left-hug.tag != NULL }
+role: $inherited.types.link
+
+-- ftd.text: $cta-left-hug.title
+if: { cta-left-hug.title != NULL }
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 margin-top.px: 8
 
 -- ftd.text: 
+if: { cta-left-hug.body != NULL }
 role: $inherited.types.copy-regular
 margin-top.px: 8
 
-$cta-9.body
+$cta-left-hug.body
 
--- button: $cta-9.cta-txt
-link: $cta-9.cta-url
+-- button: $cta-left-hug.primary-cta-text
+if: { cta-left-hug.primary-cta-text != NULL }
+link: $cta-left-hug.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- end: ftd.row
 
--- end: cta-9
+-- end: cta-left-hug
 
 
 
@@ -536,12 +661,16 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
--- component cta-10:
-body body:
-string cta-primary-url:
-string cta-primary-txt:
-string cta-secondary-url:
-string cta-secondary-txt:
+
+-- component cta-left-secondary-hug:
+optional body body:
+optional string cta-primary-link:
+optional string cta-primary-text:
+optional string cta-secondary-link:
+optional string cta-secondary-text:
+optional string tag:
+optional caption title:
+optional ftd.image-src image:
 
 -- ftd.column:
 width: fill-container
@@ -550,31 +679,45 @@ max-width.fixed.px: 1110
 align-self: center
 color: $inherited.colors.text-strong
 
--- ftd.text: 
+-- ftd.text: $cta-left-hug.tag
+if: { cta-left-hug.tag != NULL }
+role: $inherited.types.link
+
+-- ftd.text: $cta-left-secondary-hug.title
+if: { cta-left-secondary-hug.title != NULL }
 role: $inherited.types.heading-medium
 margin-top.px: 24
 max-width.fixed.px: 653
 
-$cta-10.body
+
+-- ftd.text: 
+if: { cta-left-secondary-hug.body != NULL }
+role: $inherited.types.copy-regular
+margin-top.px: 24
+max-width.fixed.px: 653
+
+$cta-left-secondary-hug.body
 
 -- ftd.row:
 width: fill-container
 spacing.fixed.px: 8
 margin-top.px: 8
 
--- button: $cta-10.cta-primary-txt
-link: $cta-10.cta-primary-url
+-- button: $cta-left-secondary-hug.cta-primary-text
+if: { cta-left-secondary-hug.cta-primary-text != NULL }
+link: $cta-left-secondary-hug.cta-primary-link
 icon: $assets.files.assets.right-icon.svg
 
--- button: $cta-10.cta-secondary-txt
-link: $cta-10.cta-secondary-url
+-- button: $cta-left-secondary-hug.cta-secondary-text
+if: { cta-left-secondary-hug.cta-secondary-text != NULL }
+link: $cta-left-secondary-hug.cta-secondary-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.row
 
 -- end: ftd.column
 
--- end: cta-10
+-- end: cta-left-secondary-hug
 
 
 
@@ -585,13 +728,13 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
--- component cta-11:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
-string help-info:
-ftd.image-src image:
+-- component cta-right-secondary-hug:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional ftd.image-src image:
 
 -- ftd.row:
 width: fill-container
@@ -605,33 +748,38 @@ width: fill-container
 align-self: center
 color: $inherited.colors.text
 
--- ftd.text: $cta-11.help-info
+-- ftd.text: $cta-right-secondary-hug.tag
+if: { cta-right-secondary-hug.tag != NULL }
 role: $inherited.types.link
 
--- ftd.text: $cta-11.title
+-- ftd.text: $cta-right-secondary-hug.title
+if: { cta-right-secondary-hug.title != NULL }
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 margin-top.px: 8
 
 -- ftd.text: 
+if: { cta-right-secondary-hug.body != NULL }
 role: $inherited.types.copy-regular
 margin-top.px: 8
 
-$cta-11.body
+$cta-right-secondary-hug.body
 
--- button: $cta-11.cta-txt
-link: $cta-11.cta-url
+-- button: $cta-right-secondary-hug.primary-cta-text
+if: { cta-right-secondary-hug.primary-cta-text != NULL }
+link: $cta-right-secondary-hug.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- ftd.image:
-src: $cta-11.image
+if: { cta-right-secondary-hug.image != NULL }
+src: $cta-right-secondary-hug.image
 width: fill-container
 
 -- end: ftd.row
 
--- end: cta-11
+-- end: cta-right-secondary-hug
 
 
 
@@ -642,13 +790,13 @@ width: fill-container
 
 
 
--- component cta-12:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
-string help-info:
-ftd.image-src image:
+-- component cta-full-width-secondary-hug:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional string tag:
+optional ftd.image-src image:
 
 -- ftd.row:
 width: fill-container
@@ -658,7 +806,8 @@ max-width.fixed.px: 1110
 spacing.fixed.px: 120
 
 -- ftd.image:
-src: $cta-12.image
+if: { cta-full-width-secondary-hug.image != NULL }
+src: $cta-full-width-secondary-hug.image
 width: fill-container
 
 -- ftd.column:
@@ -666,29 +815,33 @@ width: fill-container
 align-self: center
 color: $inherited.colors.text
 
--- ftd.text: $cta-12.help-info
+-- ftd.text: $cta-full-width-secondary-hug.tag
+if: { cta-full-width-secondary-hug.tag != NULL }
 role: $inherited.types.link
 
--- ftd.text: $cta-12.title
+-- ftd.text: $cta-full-width-secondary-hug.title
+if: { cta-full-width-secondary-hug.title != NULL }
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 margin-top.px: 8
 
 -- ftd.text: 
+if: { cta-full-width-secondary-hug.body != NULL }
 role: $inherited.types.copy-large
 margin-top.px: 8
 
-$cta-12.body
+$cta-full-width-secondary-hug.body
 
--- button: $cta-12.cta-txt
-link: $cta-12.cta-url
+-- button: $cta-full-width-secondary-hug.primary-cta-text
+if: { cta-full-width-secondary-hug.primary-cta-text != NULL }
+link: $cta-full-width-secondary-hug.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- end: ftd.row
 
--- end: cta-12
+-- end: cta-full-width-secondary-hug
 
 
 
@@ -699,12 +852,12 @@ icon: $assets.files.assets.right-icon.svg
 
 
 
--- component cta-13:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
-ftd.image-src image:
+-- component cta-right-hug3:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional ftd.image-src image:
 
 -- ftd.row:
 width: fill-container
@@ -720,7 +873,7 @@ background.solid: $inherited.colors.background.step-1
 border-radius.px: 24
 padding.px: 80
 
--- ftd.text: $cta-13.title
+-- ftd.text: $cta-right-hug3.title
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 style: regular
@@ -729,16 +882,16 @@ style: regular
 role: $inherited.types.copy-regular
 margin-top.px: 8
 
-$cta-13.body
+$cta-right-hug3.body
 
--- button: $cta-13.cta-txt
-link: $cta-13.cta-url
+-- button: $cta-right-hug3.primary-cta-text
+link: $cta-right-hug3.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- ftd.image:
-src: $cta-13.image
+src: $cta-right-hug3.image
 anchor: parent
 align-self: center
 width.fixed.percent: 35
@@ -746,7 +899,7 @@ right.px: 0
 
 -- end: ftd.row
 
--- end: cta-13
+-- end: cta-right-hug3
 
 
 
@@ -757,12 +910,12 @@ right.px: 0
 
 
 
--- component cta-14:
-caption title:
-body body:
-string cta-url:
-string cta-txt:
-ftd.image-src image:
+-- component cta-right-hug4:
+optional caption title:
+optional body body:
+optional string primary-cta-link:
+optional string primary-cta-text:
+optional ftd.image-src image:
 
 -- ftd.row:
 width: fill-container
@@ -776,7 +929,7 @@ align-content: center
 height: fill-container
 
 -- ftd.image:
-src: $cta-14.image
+src: $cta-right-hug4.image
 anchor: parent
 width: fill-container
 left.px: 48
@@ -793,7 +946,7 @@ border-radius.px: 24
 padding.px: 100
 
 
--- ftd.text: $cta-14.title
+-- ftd.text: $cta-right-hug4.title
 role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 style: regular
@@ -802,17 +955,17 @@ style: regular
 role: $inherited.types.copy-regular
 margin-top.px: 8
 
-$cta-14.body
+$cta-right-hug4.body
 
--- button: $cta-14.cta-txt
-link: $cta-14.cta-url
+-- button: $cta-right-hug4.primary-cta-text
+link: $cta-right-hug4.primary-cta-link
 icon: $assets.files.assets.right-icon.svg
 
 -- end: ftd.column
 
 -- end: ftd.row
 
--- end: cta-14
+-- end: cta-right-hug4
 
 
 
@@ -828,7 +981,7 @@ icon: $assets.files.assets.right-icon.svg
 
 
 -- component button:
-caption title:
+optional caption title:
 string link:
 optional ftd.image-src icon:
 boolean $cta-hover: false
@@ -869,7 +1022,7 @@ align-self: center
 
 
 -- component search-bar:
-caption title:
+optional caption title:
 
 -- ftd.row:
 
